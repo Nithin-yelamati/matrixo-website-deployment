@@ -38,7 +38,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="section-padding bg-white dark:bg-gray-900">
+    <section className="section-padding bg-transparent">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,12 +64,12 @@ export default function Features() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               whileHover={{ y: -10 }}
-              className="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl border-2 border-transparent hover:border-neon-blue/30 transition-all duration-300"
+              className="glass-card p-8 hover-lift hover-glow"
             >
               <motion.div
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
-                className="w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 text-white"
+                className="w-14 h-14 bg-gray-900/90 dark:bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center mb-6 text-white dark:text-gray-900 shadow-lg"
               >
                 <feature.icon size={24} />
               </motion.div>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaBars, FaTimes, FaMoon, FaSun, FaChevronDown, FaUser, FaSignOutAlt, FaIdBadge } from 'react-icons/fa'
@@ -51,6 +52,11 @@ const betaLinks = [
     href: '/impactvault',
     description: 'Real-time analytics and skill gap insights'
   },
+  { 
+    name: 'Profile & Username', 
+    href: '/profile',
+    description: 'Public profiles with usernames, privacy controls & sharing'
+  },
 ]
 
 export default function Navbar() {
@@ -70,7 +76,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setMounted(true)
-    setIsBeta(window.location.hostname === 'beta.matrixo.in')
+    setIsBeta(window.location.hostname === 'beta.matrixo.in' || window.location.hostname === 'localhost')
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
     }
@@ -136,7 +142,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-40 transition-all duration-300 bg-white/95 dark:bg-gray-950/95 backdrop-blur-2xl shadow-lg border-b border-gray-200/20 dark:border-gray-700/20`}
+      className={`fixed top-0 w-full z-40 transition-all duration-500 glass-nav ${scrolled ? 'shadow-sm' : ''}`}
     >
       <div className="container-custom px-4 sm:px-6 py-3">
         <div className="flex items-center justify-between">
@@ -202,12 +208,12 @@ export default function Navbar() {
                     href={link.href}
                     className={`font-medium transition-all duration-300 ease-out relative group ${
                       isActive 
-                        ? 'text-blue-500 dark:text-blue-400' 
-                        : 'text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400'
+                        ? 'text-gray-900 dark:text-white' 
+                        : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
                     }`}
                   >
                     {link.name}
-                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 
+                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-gray-900 dark:bg-white 
                                    transition-all duration-300 ease-out ${
                                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
                                    }`} />
@@ -238,13 +244,14 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 8, scale: 0.96 }}
                       transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
-                      className="absolute top-full right-0 mt-2 w-80 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden"
+                      className="absolute top-full right-0 mt-2 w-80 glass-card-elevated overflow-hidden"
                     >
                       {betaLinks.map((link, index) => (
                         <Link
                           key={link.name}
                           href={link.href}
-                          className="block px-6 py-4 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors border-b border-gray-100 dark:border-gray-700 last:border-b-0"
+                          onClick={() => setShowFeaturesDropdown(false)}
+                          className="block px-6 py-4 hover:bg-white/40 dark:hover:bg-white/[0.06] transition-colors border-b border-gray-200/30 dark:border-white/[0.06] last:border-b-0"
                         >
                           <div className="font-bold text-purple-600 dark:text-purple-400 mb-1">
                             {link.name}
@@ -268,8 +275,8 @@ export default function Navbar() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={toggleDarkMode}
-                className="relative p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 
-                         hover:bg-gray-300 dark:hover:bg-gray-700 transition-all duration-300 ease-out"
+                className="relative p-2.5 rounded-2xl glass-card-thin text-gray-700 dark:text-gray-300 
+                         hover:scale-105 transition-all duration-300 ease-out"
                 aria-label="Toggle dark mode"
               >
                 <AnimatePresence mode="wait">
@@ -309,11 +316,19 @@ export default function Navbar() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="inline-flex items-center gap-2 px-4 py-2 border-2 border-purple-500 text-purple-600 dark:text-purple-400 
-                           rounded-full font-semibold hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all duration-200"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 glass-card-thin text-gray-700 dark:text-gray-300 
+                           rounded-full font-semibold hover:scale-[1.02] transition-all duration-300"
                 >
-                  <FaUser className="text-sm" />
-                  {profile?.fullName || user.displayName || user.email?.split('@')[0]}
+                  {profile?.profilePhoto ? (
+                    <div className="w-7 h-7 rounded-full overflow-hidden flex-shrink-0">
+                      <Image src={profile.profilePhoto} alt="" width={28} height={28} className="object-cover w-full h-full" />
+                    </div>
+                  ) : (
+                    <div className="w-7 h-7 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center flex-shrink-0">
+                      <span className="text-xs font-bold text-gray-600 dark:text-gray-300">{profile?.fullName?.charAt(0)?.toUpperCase() || 'U'}</span>
+                    </div>
+                  )}
+                  <span className="hidden sm:inline">{profile?.fullName || user.displayName || user.email?.split('@')[0]}</span>
                 </motion.button>
                 
                 <AnimatePresence>
@@ -323,19 +338,22 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 8, scale: 0.96 }}
                       transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
-                      className="absolute top-full right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden"
+                      className="absolute top-full right-0 mt-2 w-56 glass-card-elevated overflow-hidden"
                     >
-                      <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700">
+                      <div className="px-4 py-3 border-b border-gray-200/30 dark:border-white/[0.06]">
                         <p className="text-sm font-semibold text-gray-900 dark:text-white truncate">
                           {profile?.fullName || user.displayName || 'User'}
                         </p>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
+                        {profile?.username && (
+                          <p className="text-xs text-gray-500 dark:text-gray-400 truncate">@{profile.username}</p>
+                        )}
+                        <p className="text-xs text-gray-400 truncate">
                           {user.email}
                         </p>
                       </div>
                       <Link
                         href="/profile"
-                        className="w-full px-4 py-3 text-left flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors border-b border-gray-200 dark:border-gray-700"
+                        className="w-full px-4 py-3 text-left flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:bg-white/40 dark:hover:bg-white/[0.06] transition-colors border-b border-gray-200/30 dark:border-white/[0.06]"
                       >
                         <FaUser className="text-sm" />
                         <span>Profile</span>
@@ -345,7 +363,7 @@ export default function Navbar() {
                           href={EMPLOYEE_PORTAL_URL}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full px-4 py-3 text-left flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors border-b border-gray-200 dark:border-gray-700"
+                          className="w-full px-4 py-3 text-left flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:bg-white/40 dark:hover:bg-white/[0.06] transition-colors border-b border-gray-200/30 dark:border-white/[0.06]"
                         >
                           <FaIdBadge />
                           <span>Employee Portal</span>
@@ -370,8 +388,8 @@ export default function Navbar() {
               >
                 <Link
                   href="/auth"
-                  className="inline-flex items-center gap-2 px-4 py-2 border-2 border-purple-500 text-purple-600 dark:text-purple-400 
-                           rounded-full font-semibold hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all duration-300 ease-out"
+                  className="inline-flex items-center gap-2 px-4 py-2 glass-card-thin text-gray-700 dark:text-gray-300 
+                           rounded-full font-semibold hover:scale-[1.02] transition-all duration-300"
                 >
                   <FaUser className="text-sm" />
                   Login
@@ -385,7 +403,7 @@ export default function Navbar() {
             {mounted && (
               <button
                 onClick={toggleDarkMode}
-                className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200"
+                className="p-2 rounded-2xl glass-card-thin text-gray-700 dark:text-gray-300"
                 aria-label="Toggle dark mode"
               >
                 {darkMode ? <FaSun className="w-5 h-5" /> : <FaMoon className="w-5 h-5" />}
@@ -394,7 +412,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="p-2 rounded-2xl hover:bg-white/40 dark:hover:bg-white/[0.06] transition-colors"
               aria-label="Toggle menu"
             >
               {isOpen ? (
@@ -427,10 +445,10 @@ export default function Navbar() {
                       key={link.name}
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className={`block px-4 py-2 rounded-lg transition-all duration-200 ease-out ${
+                      className={`block px-4 py-2.5 rounded-2xl transition-all duration-200 ease-out ${
                         isActive
-                          ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-semibold'
-                          : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                          ? 'bg-blue-500/15 dark:bg-blue-400/10 text-blue-600 dark:text-blue-400 font-semibold backdrop-blur-sm'
+                          : 'text-gray-700 dark:text-gray-300 hover:bg-white/40 dark:hover:bg-white/[0.06]'
                       }`}
                     >
                       {link.name}
@@ -440,11 +458,11 @@ export default function Navbar() {
 
                 {/* Mobile Beta Features Accordion */}
                 {isBeta && (
-                  <div className="border-t border-gray-200 dark:border-gray-700 pt-3 mt-3">
+                  <div className="border-t border-gray-200/30 dark:border-white/[0.06] pt-3 mt-3">
                     <button
                       onClick={() => setShowMobileFeaturesDropdown(!showMobileFeaturesDropdown)}
-                      className="w-full flex items-center justify-between px-4 py-2 text-purple-600 dark:text-purple-400 
-                               font-bold hover:bg-purple-50 dark:hover:bg-purple-900/20 rounded-lg transition-colors"
+                      className="w-full flex items-center justify-between px-4 py-2.5 text-purple-600 dark:text-purple-400 
+                               font-bold hover:bg-white/40 dark:hover:bg-white/[0.06] rounded-2xl transition-colors"
                     >
                       <span>Features</span>
                       <FaChevronDown className={`text-xs transition-transform duration-200 ${showMobileFeaturesDropdown ? 'rotate-180' : ''}`} />
@@ -467,8 +485,8 @@ export default function Navbar() {
                                   setIsOpen(false)
                                   setShowMobileFeaturesDropdown(false)
                                 }}
-                                className="block px-4 py-3 bg-purple-50 dark:bg-purple-900/10 hover:bg-purple-100 dark:hover:bg-purple-900/20 
-                                         rounded-lg transition-colors"
+                                className="block px-4 py-3 bg-purple-500/10 dark:bg-purple-400/[0.06] hover:bg-purple-500/15 dark:hover:bg-purple-400/10 
+                                         rounded-2xl transition-colors backdrop-blur-sm"
                               >
                                 <div className="font-bold text-purple-600 dark:text-purple-400 text-sm mb-1">
                                   {link.name}
@@ -486,22 +504,33 @@ export default function Navbar() {
                 )}
 
                 {/* Mobile CTA Buttons */}
-                <div className="border-t border-gray-200 dark:border-gray-700 pt-3 mt-3 space-y-2">
+                <div className="border-t border-gray-200/30 dark:border-white/[0.06] pt-3 mt-3 space-y-2">
                   {user ? (
                     <>
-                      <div className="px-4 py-3 bg-purple-50 dark:bg-purple-900/10 rounded-lg">
-                        <p className="text-sm font-semibold text-gray-900 dark:text-white truncate">
-                          {profile?.fullName || user.displayName || 'User'}
-                        </p>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
-                          {user.email}
-                        </p>
+                      <div className="px-4 py-3 bg-white/50 dark:bg-white/[0.04] rounded-2xl flex items-center gap-3 backdrop-blur-sm">
+                        {profile?.profilePhoto ? (
+                          <div className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0">
+                            <Image src={profile.profilePhoto} alt="" width={40} height={40} className="object-cover w-full h-full" />
+                          </div>
+                        ) : (
+                          <div className="w-10 h-10 rounded-xl bg-gray-200 dark:bg-gray-700 flex items-center justify-center flex-shrink-0">
+                            <span className="text-sm font-bold text-gray-600 dark:text-gray-300">{profile?.fullName?.charAt(0)?.toUpperCase() || 'U'}</span>
+                          </div>
+                        )}
+                        <div className="min-w-0">
+                          <p className="text-sm font-semibold text-gray-900 dark:text-white truncate">
+                            {profile?.fullName || user.displayName || 'User'}
+                          </p>
+                          {profile?.username && (
+                            <p className="text-xs text-gray-500 dark:text-gray-400 truncate">@{profile.username}</p>
+                          )}
+                        </div>
                       </div>
                       <Link
                         href="/profile"
                         onClick={() => setIsOpen(false)}
-                        className="flex items-center justify-center gap-2 w-full px-4 py-2.5 border-2 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300
-                                 rounded-full font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200"
+                        className="flex items-center justify-center gap-2 w-full px-4 py-2.5 glass-card-thin text-gray-700 dark:text-gray-300
+                                 rounded-full font-semibold hover:scale-[1.02] transition-all duration-200"
                       >
                         <FaUser className="text-sm" />
                         Profile
@@ -545,8 +574,8 @@ export default function Navbar() {
                   <Link
                     href="/contact"
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center justify-center w-full px-6 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 
-                             text-white rounded-full font-semibold hover:shadow-lg transition-all duration-200"
+                      className="flex items-center justify-center w-full px-6 py-2.5 btn-primary
+                             rounded-full font-semibold hover:shadow-lg transition-all duration-200"
                   >
                     Get Started
                   </Link>
