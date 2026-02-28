@@ -215,7 +215,7 @@ export default function PublicProfilePage() {
       </div>
 
       {/* ── Top nav ── */}
-      <div className="relative z-20 px-4 sm:px-6 pt-6 max-w-5xl mx-auto print:hidden">
+      <div className="relative z-20 px-4 sm:px-6 lg:px-10 pt-24 max-w-full mx-auto print:hidden">
         <div className="flex items-center justify-between">
           <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
             <FaArrowLeft className="text-sm" /> <span className="text-sm">Home</span>
@@ -237,7 +237,7 @@ export default function PublicProfilePage() {
         variants={staggerContainer}
         initial="initial"
         animate="animate"
-        className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-6 space-y-5"
+        className="relative z-10 max-w-full mx-auto px-4 sm:px-6 lg:px-10 py-6 space-y-5"
       >
 
         {/* ═══════════════════════════════════════════════ */}
