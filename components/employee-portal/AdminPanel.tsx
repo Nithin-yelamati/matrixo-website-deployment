@@ -1756,8 +1756,19 @@ export function AdminPanel() {
       })
       const uniqueAttendance = Array.from(attendanceMap.values())
       
+      // Filter out attendance records that are before each employee's joining date
+      const joiningDateMap = new Map<string, string>()
+      uniqueEmps.forEach(emp => {
+        if (emp.joiningDate) joiningDateMap.set(emp.employeeId, emp.joiningDate)
+      })
+      const filteredAttendance = uniqueAttendance.filter(record => {
+        const joinDate = joiningDateMap.get(record.employeeId)
+        if (joinDate && record.date < joinDate) return false
+        return true
+      })
+      
       setEmployees(uniqueEmps)
-      setAttendanceRecords(uniqueAttendance)
+      setAttendanceRecords(filteredAttendance)
       
       // Calculate stats for each employee
       const empsWithStats: EmployeeWithStats[] = await Promise.all(

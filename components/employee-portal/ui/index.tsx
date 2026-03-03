@@ -548,7 +548,7 @@ export const Modal = ({ isOpen, onClose, title, children, size = 'md', className
   
   return (
     <AnimatePresence>
-      {isOpen && (
+      {isOpen && typeof window !== 'undefined' && createPortal(
         <div className="fixed top-0 left-0 right-0 bottom-0 z-[9999] flex items-center justify-center p-4" style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh' }}>
           {/* Backdrop with strong blur - covers entire viewport */}
           <motion.div
@@ -589,7 +589,8 @@ export const Modal = ({ isOpen, onClose, title, children, size = 'md', className
               {children}
             </div>
           </motion.div>
-        </div>
+        </div>,
+        document.body
       )}
     </AnimatePresence>
   )
