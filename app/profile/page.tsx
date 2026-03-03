@@ -14,6 +14,7 @@ import { useProfile, DEFAULT_PRIVACY, PrivacySettings } from '@/lib/ProfileConte
 import { toast } from 'sonner'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { storage } from '@/lib/firebaseConfig'
+import { compressImage } from '@/lib/imageUtils'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -189,15 +190,27 @@ export default function ProfilePage() {
   const handlePhotoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (!file || !user) return
-    if (file.size > 2 * 1024 * 1024) { toast.error('Photo must be <2MB'); return }
+    if (!file.type.startsWith('image/')) { toast.error('Please select an image file'); return }
+    if (file.size > 10 * 1024 * 1024) { toast.error('Photo must be less than 10MB'); return }
     setUploadingPhoto(true)
     try {
+      // Compress image client-side for faster upload & smaller storage
+      const compressedBlob = await compressImage(file, { maxWidth: 800, maxHeight: 800, quality: 0.85 })
       const photoRef = ref(storage, `profile-photos/${user.uid}`)
-      await uploadBytes(photoRef, file)
+      await uploadBytes(photoRef, compressedBlob, { contentType: 'image/jpeg' })
       const url = await getDownloadURL(photoRef)
       await updateProfile({ profilePhoto: url })
       toast.success('Photo updated!')
-    } catch { toast.error('Failed to upload') } finally { setUploadingPhoto(false) }
+    } catch (err: any) {
+      console.error('Photo upload error:', err)
+      if (err?.code === 'storage/unauthorized') {
+        toast.error('Upload permission denied. Please try signing out and back in.')
+      } else if (err?.code === 'storage/canceled') {
+        toast.error('Upload was cancelled')
+      } else {
+        toast.error('Failed to upload photo. Please try again.')
+      }
+    } finally { setUploadingPhoto(false) }
   }
 
   const handleCopyLink = () => {
