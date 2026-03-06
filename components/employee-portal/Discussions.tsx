@@ -22,6 +22,27 @@ import { toast } from 'sonner'
 import { Timestamp } from 'firebase/firestore'
 
 // ============================================
+// LOCAL PROFILE IMAGE FALLBACKS
+// ============================================
+const localProfileImages: Record<string, string> = {
+  'M-A001': '/intern-images/M-A001.webp',
+  'M-A005': '/intern-images/M-A005.webp',
+  'M-A006': '/intern-images/M-A006.webp',
+  'M-A008': '/intern-images/M-A008.webp',
+  'M-A009': '/intern-images/M-A009.webp',
+  'M-A010': '/intern-images/M-A010.webp',
+  'M-A011': '/intern-images/M-A011.webp',
+  'M-A012': '/intern-images/M-A012.webp',
+  'M-A013': '/intern-images/M-A013.webp',
+}
+
+const getEmpProfileImage = (profileImage?: string, employeeId?: string): string | undefined => {
+  if (profileImage) return profileImage
+  if (employeeId && localProfileImages[employeeId]) return localProfileImages[employeeId]
+  return undefined
+}
+
+// ============================================
 // MENTION INPUT COMPONENT (PORTAL-BASED)
 // ============================================
 
@@ -272,7 +293,7 @@ function MentionInput({
                 index === selectedIndex ? 'bg-primary-500/30 border-l-2 border-primary-500' : 'hover:bg-neutral-700'
               }`}
             >
-              <Avatar src={emp.profileImage} name={emp.name} size="sm" showBorder={false} />
+              <Avatar src={getEmpProfileImage(emp.profileImage, emp.employeeId)} name={emp.name} size="sm" showBorder={false} />
               <div className="min-w-0 flex-1">
                 <p className="text-sm text-white font-medium truncate">{emp.name}</p>
                 <p className="text-xs text-neutral-500 truncate">{emp.department}</p>
