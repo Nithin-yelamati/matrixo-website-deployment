@@ -375,11 +375,16 @@ const statusConfig = {
 
 const INTERN_SPECIALIZATIONS = [
   'Web Development',
-  'Content and Curriculum Development',
+  'Content & Curriculum Development',
   'Product Research & Innovation',
   'Operations & Project Management',
   'Marketing & Brand Strategy'
 ]
+
+// Normalize text for flexible intern specialization matching
+// Handles: "&" vs "and", trailing "Intern" suffix, extra whitespace
+const normalizeSpecText = (text: string) =>
+  text.toLowerCase().replace(/&/g, 'and').replace(/\bintern\b/gi, '').replace(/\s+/g, ' ').trim()
 
 // ============================================
 // CREATE/EDIT TASK MODAL
@@ -524,12 +529,14 @@ function TaskModal({
         // For Intern department, filter by department field (Firebase stores department: "Intern")
         result = result.filter(emp => (emp.department || '').toLowerCase() === 'intern')
         
-        // If specialization is selected, filter by designation (contains match)
+        // If specialization is selected, filter by designation (normalized match)
         if (form.specialization) {
-          result = result.filter(emp => 
-            emp.designation?.toLowerCase().includes(form.specialization.toLowerCase()) ||
-            emp.designation?.toLowerCase() === form.specialization.toLowerCase()
-          )
+          const normalizedSpec = normalizeSpecText(form.specialization)
+          result = result.filter(emp => {
+            if (!emp.designation) return false
+            const normalizedDesig = normalizeSpecText(emp.designation)
+            return normalizedDesig.includes(normalizedSpec) || normalizedSpec.includes(normalizedDesig)
+          })
         }
       } else {
         // For other departments, filter by department
