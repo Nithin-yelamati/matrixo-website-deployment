@@ -521,15 +521,14 @@ function TaskModal({
     // Filter by department if selected
     if (form.department) {
       if (form.department === 'Intern') {
-        // For Intern department, filter by role containing 'intern' (case-insensitive)
-        result = result.filter(emp => (emp.role || '').toLowerCase().includes('intern'))
+        // For Intern department, filter by department field (Firebase stores department: "Intern")
+        result = result.filter(emp => (emp.department || '').toLowerCase() === 'intern')
         
-        // If specialization is selected, filter by designation or department (contains match)
+        // If specialization is selected, filter by designation (contains match)
         if (form.specialization) {
           result = result.filter(emp => 
             emp.designation?.toLowerCase().includes(form.specialization.toLowerCase()) ||
-            emp.designation?.toLowerCase() === form.specialization.toLowerCase() ||
-            emp.department?.toLowerCase().includes(form.specialization.toLowerCase())
+            emp.designation?.toLowerCase() === form.specialization.toLowerCase()
           )
         }
       } else {
@@ -660,7 +659,7 @@ function TaskModal({
                   <Avatar src={getEmpProfileImage(emp.profileImage, emp.employeeId)} name={emp.name} size="sm" showBorder={false} />
                   <div className="flex-1 min-w-0">
                     <p className="text-sm text-white truncate">{emp.name}</p>
-                    <p className="text-xs text-neutral-500">{emp.role?.toLowerCase() === 'intern' ? 'Intern' : emp.department}</p>
+                    <p className="text-xs text-neutral-500">{(emp.department || '').toLowerCase() === 'intern' ? 'Intern' : emp.department}</p>
                   </div>
                   {form.assignedTo.includes(emp.employeeId) && (
                     <FaCheckCircle className="text-primary-500" />
@@ -1368,7 +1367,7 @@ export function Tasks({ selectedTaskId, onTaskOpened, showOnlyMyTasks = false }:
         return assignedTo.some(empId => {
           const emp = employees.find(e => e.employeeId === empId)
           if (filterRole === 'Intern') {
-            return (emp?.role || '').toLowerCase().includes('intern')
+            return (emp?.department || '').toLowerCase() === 'intern'
           }
           return emp?.role === filterRole
         })
