@@ -387,11 +387,11 @@ const normalizeSpecText = (text: string) =>
   text.toLowerCase().replace(/&/g, 'and').replace(/\bintern\b/gi, '').replace(/\s+/g, ' ').trim()
 
 // Universal intern detector — checks ALL possible ways an employee can be an intern in Firebase
-// Matches: department="Intern", designation contains "Intern", or role="Intern"
+// Uses .trim() to handle trailing/leading spaces in Firebase string values
 const isIntern = (emp: EmployeeProfile): boolean => {
-  const dept = (emp.department || '').toLowerCase()
-  const desig = (emp.designation || '').toLowerCase()
-  const role = (emp.role || '').toLowerCase()
+  const dept = (emp.department || '').trim().toLowerCase()
+  const desig = (emp.designation || '').trim().toLowerCase()
+  const role = (emp.role || '').trim().toLowerCase()
   return dept === 'intern' || desig.includes('intern') || role === 'intern'
 }
 
@@ -535,7 +535,7 @@ function TaskModal({
     // Filter by department if selected
     if (form.department) {
       if (form.department === 'Intern') {
-        // For Intern department, use universal intern detection
+        // For Intern department, use universal intern detection (handles trailing spaces in Firebase)
         result = result.filter(emp => isIntern(emp))
         
         // If specialization is selected, filter by designation (normalized match)
