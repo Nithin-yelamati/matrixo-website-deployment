@@ -1406,12 +1406,11 @@ export function AttendanceDashboard({ refreshKey }: { refreshKey?: number }) {
     fetchRecords()
   }, [timeRange, getAttendanceRecords, refreshKey])
 
-  const presentDays = records.filter(r => r.status === 'P').length
+  const presentDays = records.filter(r => r.status === 'P' || r.status === 'W').length
   const absentDays = records.filter(r => r.status === 'A').length
   const leaveDays = records.filter(r => r.status === 'L').length
   const onDutyDays = records.filter(r => r.status === 'O').length
   const unauthorisedLeaveDays = records.filter(r => r.status === 'U').length
-  const wfhDays = records.filter(r => r.status === 'W').length
   const percentage = calculateAttendancePercentage(records)
 
   return (
@@ -1454,7 +1453,6 @@ export function AttendanceDashboard({ refreshKey }: { refreshKey?: number }) {
             <StatsCard title="Leave" value={leaveDays} icon={FaUmbrellaBeach} color="bg-amber-500" />
             <StatsCard title="On Duty" value={onDutyDays} icon={FaBriefcase} color="bg-blue-500" />
             <StatsCard title="Unauth. Leave" value={unauthorisedLeaveDays} icon={FaBan} color="bg-rose-600" />
-            <StatsCard title="WFH" value={wfhDays} icon={FaHome} color="bg-cyan-500" />
           </div>
 
           {/* Progress Bar */}
