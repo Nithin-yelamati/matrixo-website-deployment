@@ -1,186 +1,5 @@
 [
   {
-    "id": "pottery-workshop-wranglex-2026",
-    "slug": "pottery-workshop",
-    "title": "Pottery Workshop",
-    "tagline": "Hands-on Creative Session",
-    "description": "INFOQUEST 2026 – POTTERY WORKSHOP 🎨\n\nGet ready for a hands-on creative experience with clay! Design and build your own unique pottery based on a given theme and explore the art of pottery in a fun and interactive session.\n\n🎯 What's in?\n• Creative clay modelling session\n• Machines & tools provided for each team\n• Guidance from an instructor\n• Refreshments during the event\n• Take home your handmade pottery item\n\n💰 Registration Fee\nTeam of 3 – ₹449\nTeam of 4 – ₹549\n\n📅 Event Date: 13th March 2026",
-    "date": "2026-03-13T10:00:00",
-    "venue": "JBIET Campus",
-    "location": "JBIET Campus, Hyderabad",
-    "totalCapacity": 500,
-    "ticketsSold": 0,
-    "featured": true,
-    "status": "upcoming",
-    "category": "Workshop",
-    "externalRegistrationLink": "https://datawranglers-jbiet.in/pottery/",
-    "images": {
-      "banner": "/events/pottery-workshop-banner.png",
-      "thumbnail": "/events/pottery-workshop-thumbnail.png",
-      "gallery": ["/events/pottery-workshop-banner.png", "/events/pottery-workshop-thumbnail.png"]
-    },
-    "tickets": [
-      {
-        "id": "team3",
-        "name": "Team of 3",
-        "price": 449,
-        "available": 500,
-        "description": "3 Members",
-        "perks": [
-          "Creative clay modelling session",
-          "Machines & tools provided",
-          "Guidance from an instructor",
-          "Refreshments during the event",
-          "Take home your handmade pottery item"
-        ]
-      },
-      {
-        "id": "team4",
-        "name": "Team of 4",
-        "price": 549,
-        "available": 500,
-        "description": "4 Members",
-        "perks": [
-          "Creative clay modelling session",
-          "Machines & tools provided",
-          "Guidance from an instructor",
-          "Refreshments during the event",
-          "Take home your handmade pottery item"
-        ]
-      }
-    ],
-    "partners": [],
-    "sponsors": [],
-    "agenda": [],
-    "tags": ["Workshop", "Creative", "Clay", "Pottery", "INFOQUEST 2026"],
-    "organizer": "WrangleX",
-    "contactEmail": "",
-    "socialLinks": {},
-    "highlights": [
-      "Hands-on creative clay modelling",
-      "Machines & tools provided for each team",
-      "Guidance from an instructor",
-      "Refreshments included",
-      "Take home your handmade pottery item"
-    ]
-  },
-  {
-    "id": "tech-presenta-wranglex-2026",
-    "slug": "tech-presenta-wranglex",
-    "title": "Tech Presenta",
-    "tagline": "Where Technology Meets Innovation",
-    "description": "🚀 INFOQUEST 2026 – TECH PRESENTA 🚀\n\n🎯 Technical Presentation Competition\n\n💰 Individual: ₹99 | Team: ₹169 (2 members max)\n\n🧠 Rounds:\n1️⃣ Idea Screening\n2️⃣ Final Presentation & Q&A\n\n🏆 Win Exciting Prize Money & Certificates!\n\n📌 About the Event\nTech Presenta is a technical presentation competition organized by WrangleX under INFOQUEST 2026. Participants will present innovative ideas, research, or technical concepts in front of judges and compete for prizes.\n\n📋 Rounds\n\n🔹 Round 1 – Idea Screening\nParticipants submit their technical idea or concept.\n\n🔹 Round 2 – Final Presentation\nShortlisted participants present their idea followed by a Q&A session.\n\n👥 Who Can Participate\n• Engineering students\n• Individual participants\n• Teams of 2 members\n\n🏆 Prizes\n• Prize money for winners\n• Participation certificates",
-    "date": "2026-03-11T10:00:00",
-    "venue": "J.B Institute of Engineering and Technology",
-    "location": "Hyderabad",
-    "totalCapacity": 500,
-    "ticketsSold": 0,
-    "featured": true,
-    "status": "upcoming",
-    "category": "Competition",
-    "externalRegistrationLink": "https://datawranglers-jbiet.in/tech-presenta/",
-    "images": {
-      "banner": "/events/tech-presenta-banner.png",
-      "thumbnail": "/events/tech-presenta-thumbnail.png",
-      "gallery": ["/events/tech-presenta-banner.png", "/events/tech-presenta-thumbnail.png"]
-    },
-    "tickets": [
-      {
-        "id": "individual-pass",
-        "name": "Individual Pass",
-        "price": 99,
-        "available": 500,
-        "description": "Individual registration for Tech Presenta",
-        "perks": [
-          "Technical presentation competition entry",
-          "Participation certificate",
-          "Chance to win prize money"
-        ]
-      },
-      {
-        "id": "team-pass",
-        "name": "Team Pass (2 Members)",
-        "price": 169,
-        "available": 250,
-        "description": "Team registration (2 members max)",
-        "perks": [
-          "Technical presentation competition entry for team",
-          "Participation certificates for both members",
-          "Chance to win prize money"
-        ]
-      }
-    ],
-    "partners": [],
-    "sponsors": [],
-    "agenda": [
-      { "time": "Round 1", "title": "Idea Screening – Submit your technical idea or concept" },
-      { "time": "Round 2", "title": "Final Presentation & Q&A – Present your idea to the judges" }
-    ],
-    "tags": ["Competition", "Tech Presentation", "INFOQUEST 2026", "WrangleX"],
-    "organizer": "WrangleX",
-    "contactEmail": "",
-    "socialLinks": {},
-    "highlights": [
-      "Technical presentation competition",
-      "Individual or team participation (2 members max)",
-      "Prize money for winners",
-      "Participation certificates for all"
-    ]
-  },
-  {
-    "id": "promptoff-championship-jbiet-2026",
-    "slug": "promptoff-championship-jbiet",
-    "title": "Promptoff Championship",
-    "tagline": "AI Prompt Engineering Competition",
-    "description": "INFOQUEST 2026 – WRANGLE X 🔥\nPresented by the Departments of AI&DS and CSE(DS), J.B Institute of Engineering and Technology\n\n🎯 PROMPTOFF CHAMPIONSHIP – AI Prompt Engineering Competition\n\nStep into the world of Artificial Intelligence and Prompt Engineering and prove your skills through an exciting multi-round challenge designed to test your creativity, logic, and technical thinking.\n\n🧠 Competition Rounds:\n🔹 Round 1: Fundamental & Constraint-Based Prompting\n🔹 Round 2: Applied Real-World Use Cases\n🔹 Round 3: Advanced Problem Solving & Live Challenge\n\n💰 Registration Fee: ₹149 (Individual)\n📜 Microsoft Participation Certificates will be provided to all eligible participants.\n\n🏆 Exciting Opportunity:\nWin an exclusive campus tour at Microsoft Hyderabad!\n\n📅 Event Date: 11th March 2026\n📝 Last Date for Registration: 9th March 2026",
-    "date": "2026-03-11T10:00:00",
-    "venue": "J.B Institute of Engineering and Technology",
-    "location": "J.B Institute of Engineering and Technology, Hyderabad",
-    "totalCapacity": 500,
-    "ticketsSold": 0,
-    "featured": true,
-    "status": "upcoming",
-    "category": "Competition",
-    "externalRegistrationLink": "https://datawranglers-jbiet.in/promptoff/",
-    "images": {
-      "banner": "/events/promptoff-1.png",
-      "thumbnail": "/events/promptoff-1.png",
-      "gallery": ["/events/promptoff-1.png", "/events/promptoff-2.png"]
-    },
-    "tickets": [
-      {
-        "id": "individual-pass",
-        "name": "Individual Pass",
-        "price": 149,
-        "available": 500,
-        "description": "Individual registration for Promptoff Championship",
-        "perks": [
-          "Multi-round AI prompt engineering challenge",
-          "Microsoft Participation Certificate",
-          "Chance to win Microsoft Hyderabad campus tour",
-          "Fundamental, Applied & Advanced rounds"
-        ]
-      }
-    ],
-    "partners": [],
-    "sponsors": [],
-    "agenda": [
-      { "time": "Round 1", "title": "Fundamental & Constraint-Based Prompting" },
-      { "time": "Round 2", "title": "Applied Real-World Use Cases" },
-      { "time": "Round 3", "title": "Advanced Problem Solving & Live Challenge" }
-    ],
-    "tags": ["AI", "Prompt Engineering", "Competition", "INFOQUEST 2026"],
-    "organizer": "Departments of AI&DS and CSE(DS), JBIET",
-    "contactEmail": "",
-    "socialLinks": {},
-    "highlights": [
-      "Multi-round AI Prompt Engineering challenge",
-      "Microsoft Participation Certificates for all",
-      "Win exclusive Microsoft Hyderabad campus tour",
-      "Test your creativity, logic, and technical thinking"
-    ]
-  },
-  {
     "id": "vibecoding-irl-kprit-2026",
     "slug": "vibecoding-irl-kprit",
     "title": "VibeCode IRL",
@@ -220,17 +39,43 @@
         ]
       }
     ],
-    "partners": ["matriXO"],
+    "partners": [
+      "matriXO"
+    ],
     "sponsors": [],
     "agenda": [
-      { "time": "Feb 12 - 10:00 AM - 1:00 PM", "title": "Session 1: Workshop + Quiz Competition" },
-      { "time": "Feb 12 - 1:00 PM - 2:00 PM", "title": "Lunch Break" },
-      { "time": "Feb 12 - 2:00 PM - 4:00 PM", "title": "Session 1: Coding Competition & Certificates" },
-      { "time": "Feb 13 - 10:00 AM - 1:00 PM", "title": "Session 2: Workshop + Quiz Competition" },
-      { "time": "Feb 13 - 1:00 PM - 2:00 PM", "title": "Lunch Break" },
-      { "time": "Feb 13 - 2:00 PM - 4:00 PM", "title": "Session 2: Coding Competition & Certificates" }
+      {
+        "time": "Feb 12 - 10:00 AM - 1:00 PM",
+        "title": "Session 1: Workshop + Quiz Competition"
+      },
+      {
+        "time": "Feb 12 - 1:00 PM - 2:00 PM",
+        "title": "Lunch Break"
+      },
+      {
+        "time": "Feb 12 - 2:00 PM - 4:00 PM",
+        "title": "Session 1: Coding Competition & Certificates"
+      },
+      {
+        "time": "Feb 13 - 10:00 AM - 1:00 PM",
+        "title": "Session 2: Workshop + Quiz Competition"
+      },
+      {
+        "time": "Feb 13 - 1:00 PM - 2:00 PM",
+        "title": "Lunch Break"
+      },
+      {
+        "time": "Feb 13 - 2:00 PM - 4:00 PM",
+        "title": "Session 2: Coding Competition & Certificates"
+      }
     ],
-    "tags": ["Workshop", "AI Coding", "Learning", "Individual Event", "matriXO"],
+    "tags": [
+      "Workshop",
+      "AI Coding",
+      "Learning",
+      "Individual Event",
+      "matriXO"
+    ],
     "organizer": "matriXO",
     "ticketingPartner": "matriXO",
     "contactEmail": "events@matrixo.in",
@@ -283,7 +128,6 @@
         "answer": "Bring your laptop and charger. We'll provide internet access and workspace."
       },
       {
-
         "question": "Is this a team event?",
         "answer": "No, this is an individual workshop. Each person registers and participates on their own."
       },
@@ -352,7 +196,9 @@
         ]
       }
     ],
-    "partners": ["matriXO"],
+    "partners": [
+      "matriXO"
+    ],
     "sponsors": [],
     "speakers": [
       {
@@ -517,30 +363,115 @@
       }
     ],
     "agenda": [
-      { "time": "9:30 AM", "title": "Lamp Lighting, Classical Dance, and Address by Organizers" },
-      { "time": "10:00 AM", "title": "Talk 1: Hema Thakur (Author)", "speaker": "Hema Thakur" },
-      { "time": "10:20 AM", "title": "Talk 2: Dr. A M Reddy (Founder, Dr. Care Homeopathy)", "speaker": "Dr. A M Reddy" },
-      { "time": "10:40 AM", "title": "Talk 3: Rohit Tiwari (Sr. Director, Dexian India)", "speaker": "Rohit Tiwari" },
-      { "time": "11:00 AM", "title": "Talk 4: Dr. Sairam Atluri (Founder & CEO, Tulsi Therapeutics)", "speaker": "Dr. SaiRam Atluri" },
-      { "time": "11:20 AM", "title": "Short Break (20 min)" },
-      { "time": "11:40 AM", "title": "Talk 5: Ramya Parashar (COO, MiQ's Bangalore Center of Excellence)", "speaker": "Ramya Parashar" },
-      { "time": "12:00 PM", "title": "Talk 6: Sreekanth Erepalli (Managing Director, Giosun Healthcare)", "speaker": "Sreekanth Erepalli" },
-      { "time": "12:20 PM", "title": "Talk 7: Dr. Divya Raj (MD, Neo Institute of Medical Sciences)", "speaker": "Dr. Divya Raj" },
-      { "time": "12:40 PM", "title": "Talk 8: Dr. Deepak J. Mashru (Asst. Professor, NFSU)", "speaker": "Dr. Deepak J. Mashru" },
-      { "time": "1:00 PM", "title": "Ravi Prakash (Indian Actor)" },
-      { "time": "1:20 PM", "title": "Lunch Break (1 hr)" },
-      { "time": "2:20 PM", "title": "Western Dance Performance" },
-      { "time": "2:40 PM", "title": "Talk 10: Swetaa Varma (Indian Actor & Storyteller)", "speaker": "Swetaa Varma" },
-      { "time": "3:00 PM", "title": "Talk 11: Vishal Raj (Founder & Chairman, E.C.O)", "speaker": "Vishal Raj" },
-      { "time": "3:20 PM", "title": "Talk 12: Dr. Ravi Dasari (President, Jasper Industries)", "speaker": "Dr. Ravi Dasari" },
-      { "time": "3:40 PM", "title": "Talk 13: Nithya Rajendran (Indian Classical Vocalist)", "speaker": "Nithya Rajendran" },
-      { "time": "4:00 PM", "title": "Talk 14: Rakesh Kurapati (Founder, Fast Tracks Car Care)", "speaker": "Rakesh Kurapati" },
-      { "time": "4:20 PM", "title": "Talk 15: Ravi Prakash (Indian Actor)" },
-      { "time": "4:40 PM", "title": "Address by Mr. Anish Srivastava, Faculty Coordinator, TEDxKPRIT" },
-      { "time": "4:45 PM", "title": "Valedictory Ceremony" },
-      { "time": "4:55 PM", "title": "Closing" }
+      {
+        "time": "9:30 AM",
+        "title": "Lamp Lighting, Classical Dance, and Address by Organizers"
+      },
+      {
+        "time": "10:00 AM",
+        "title": "Talk 1: Hema Thakur (Author)",
+        "speaker": "Hema Thakur"
+      },
+      {
+        "time": "10:20 AM",
+        "title": "Talk 2: Dr. A M Reddy (Founder, Dr. Care Homeopathy)",
+        "speaker": "Dr. A M Reddy"
+      },
+      {
+        "time": "10:40 AM",
+        "title": "Talk 3: Rohit Tiwari (Sr. Director, Dexian India)",
+        "speaker": "Rohit Tiwari"
+      },
+      {
+        "time": "11:00 AM",
+        "title": "Talk 4: Dr. Sairam Atluri (Founder & CEO, Tulsi Therapeutics)",
+        "speaker": "Dr. SaiRam Atluri"
+      },
+      {
+        "time": "11:20 AM",
+        "title": "Short Break (20 min)"
+      },
+      {
+        "time": "11:40 AM",
+        "title": "Talk 5: Ramya Parashar (COO, MiQ's Bangalore Center of Excellence)",
+        "speaker": "Ramya Parashar"
+      },
+      {
+        "time": "12:00 PM",
+        "title": "Talk 6: Sreekanth Erepalli (Managing Director, Giosun Healthcare)",
+        "speaker": "Sreekanth Erepalli"
+      },
+      {
+        "time": "12:20 PM",
+        "title": "Talk 7: Dr. Divya Raj (MD, Neo Institute of Medical Sciences)",
+        "speaker": "Dr. Divya Raj"
+      },
+      {
+        "time": "12:40 PM",
+        "title": "Talk 8: Dr. Deepak J. Mashru (Asst. Professor, NFSU)",
+        "speaker": "Dr. Deepak J. Mashru"
+      },
+      {
+        "time": "1:00 PM",
+        "title": "Ravi Prakash (Indian Actor)"
+      },
+      {
+        "time": "1:20 PM",
+        "title": "Lunch Break (1 hr)"
+      },
+      {
+        "time": "2:20 PM",
+        "title": "Western Dance Performance"
+      },
+      {
+        "time": "2:40 PM",
+        "title": "Talk 10: Swetaa Varma (Indian Actor & Storyteller)",
+        "speaker": "Swetaa Varma"
+      },
+      {
+        "time": "3:00 PM",
+        "title": "Talk 11: Vishal Raj (Founder & Chairman, E.C.O)",
+        "speaker": "Vishal Raj"
+      },
+      {
+        "time": "3:20 PM",
+        "title": "Talk 12: Dr. Ravi Dasari (President, Jasper Industries)",
+        "speaker": "Dr. Ravi Dasari"
+      },
+      {
+        "time": "3:40 PM",
+        "title": "Talk 13: Nithya Rajendran (Indian Classical Vocalist)",
+        "speaker": "Nithya Rajendran"
+      },
+      {
+        "time": "4:00 PM",
+        "title": "Talk 14: Rakesh Kurapati (Founder, Fast Tracks Car Care)",
+        "speaker": "Rakesh Kurapati"
+      },
+      {
+        "time": "4:20 PM",
+        "title": "Talk 15: Ravi Prakash (Indian Actor)"
+      },
+      {
+        "time": "4:40 PM",
+        "title": "Address by Mr. Anish Srivastava, Faculty Coordinator, TEDxKPRIT"
+      },
+      {
+        "time": "4:45 PM",
+        "title": "Valedictory Ceremony"
+      },
+      {
+        "time": "4:55 PM",
+        "title": "Closing"
+      }
     ],
-    "tags": ["TEDx", "Ideas Worth Spreading", "Innovation", "Leadership", "Inspiration"],
+    "tags": [
+      "TEDx",
+      "Ideas Worth Spreading",
+      "Innovation",
+      "Leadership",
+      "Inspiration"
+    ],
     "organizer": "TEDxKPRIT Team",
     "ticketingPartner": "matriXO",
     "contactPerson": "Bhuvaneshwari Pothuraju",
@@ -583,24 +514,33 @@
   {
     "id": "wranglex-infoquest-2026",
     "slug": "wranglex-infoquest-2026",
-    "externalLink": "https://datawranglers-jbiet.in/wranglex/",
     "title": "WRANGLEX INFOQUEST 2026",
     "tagline": "Compete. Create. Conquer.",
-    "description": "WRANGLEX INFOQUEST 2026 is a national-level tech fest organized by the Departments of AI&DS and CSE(DS) at J.B. Institute of Engineering & Technology (JBIET). Featuring 5 electrifying events — PromptOff Championship, Tech Presenta, BGMI Tournament, Free Fire Tournament, and Pottery Workshop — this is the ultimate arena for tech enthusiasts, gamers, and creators to showcase their skills and win exciting prizes.",
+    "description": "WRANGLEX INFOQUEST 2026 is a national-level tech fest organized by the Departments of AI&DS and CSE(DS) at J.B. Institute of Engineering & Technology (JBIET). Featuring 10 electrifying events across Tech Competitions, Esports, and Non-Tech Competitions — this is the ultimate arena for tech enthusiasts, gamers, and creators to showcase their skills and win exciting prizes.",
     "date": "2026-03-11T09:00:00",
     "endDate": "2026-03-13T17:00:00",
     "venue": "JBIET Campus",
     "location": "J.B. Institute of Engineering & Technology, Hyderabad",
-    "totalCapacity": 500,
+    "totalCapacity": 1000,
     "ticketsSold": 0,
     "featured": true,
     "status": "upcoming",
     "category": "event",
+    "isWrangleXEvent": true,
     "images": {
-      "banner": "/events/wranglex/banner.png",
-      "thumbnail": "/events/wranglex/banner.png",
+      "banner": "/events/wranglex/POSTER.png",
+      "thumbnail": "/events/wranglex/POSTER.png",
       "gallery": [
-        "/events/wranglex/banner.png"
+        "/events/wranglex/1.png",
+        "/events/wranglex/2.png",
+        "/events/wranglex/3.png",
+        "/events/wranglex/4.png",
+        "/events/wranglex/5.png",
+        "/events/wranglex/6.png",
+        "/events/wranglex/7.png",
+        "/events/wranglex/8.png",
+        "/events/wranglex/9.png",
+        "/events/wranglex/10.png"
       ]
     },
     "tickets": [
@@ -608,10 +548,10 @@
         "id": "wranglex-general",
         "name": "General Registration",
         "price": 0,
-        "available": 500,
-        "description": "Register via the official WRANGLEX website for individual event participation",
+        "available": 1000,
+        "description": "Register via individual event registration links",
         "perks": [
-          "Access to all 5 events",
+          "Access to competitions",
           "Certificates for participants",
           "Exciting prizes for winners"
         ]
@@ -620,49 +560,115 @@
     "partners": [],
     "sponsors": [],
     "agenda": [
-      { "time": "Day 1 - March 11", "title": "PromptOff Championship & Tech Presenta" },
-      { "time": "Day 2 - March 12", "title": "BGMI Tournament & Free Fire Tournament" },
-      { "time": "Day 3 - March 13", "title": "Pottery Workshop & Prize Distribution" }
+      {
+        "time": "Day 1 - March 11",
+        "title": "PromptOff Championship & Tech Presenta"
+      },
+      {
+        "time": "Day 2 - March 12",
+        "title": "BGMI Tournament, Free Fire & Asphalt"
+      },
+      {
+        "time": "Day 3 - March 13",
+        "title": "Stranger Things, Pottery Workshop & Prize Distribution"
+      }
     ],
-    "tags": ["Tech Fest", "Gaming", "AI", "PromptOff", "BGMI", "Free Fire", "Workshop", "Competition"],
-    "organizer": "Departments of AI&DS – CSE(DS), JBIET",
-    "contactEmail": "wranglex@jbiet.edu.in",
+    "tags": [
+      "Tech Fest",
+      "Gaming",
+      "AI",
+      "PromptOff",
+      "BGMI",
+      "Free Fire",
+      "Workshop",
+      "Competition",
+      "Esports"
+    ],
+    "organizer": "Departments of AI&DS and CSE(DS), JBIET",
+    "contactEmail": "",
     "socialLinks": {
       "website": "https://datawranglers-jbiet.in/wranglex/"
     },
     "highlights": [
-      "PromptOff Championship — AI prompt engineering showdown",
+      "PromptOff Championship — AI prompt engineering with Microsoft certificates",
       "Tech Presenta — Technical presentation competition",
       "BGMI Tournament — Battlegrounds Mobile India esports",
       "Free Fire Tournament — Free Fire esports battle",
+      "Asphalt Racing — High-speed racing challenge",
+      "Stranger Things — Non-tech mystery competition",
       "Pottery Workshop — Hands-on creative experience",
-      "National-level participation with prizes"
+      "National-level participation with exciting prizes"
     ],
     "subEvents": [
       {
         "name": "PromptOff Championship",
-        "description": "AI prompt engineering competition — craft the best prompts and compete for the crown.",
-        "type": "competition"
+        "description": "AI Prompt Engineering Competition — 3 rounds testing creativity, logic & technical thinking. Win a Microsoft Hyderabad campus tour! Fee: \\u20B9149",
+        "image": "/events/wranglex/1.png",
+        "registrationLink": "https://datawranglers-jbiet.in/promptoff/",
+        "category": "Tech Competition"
       },
       {
         "name": "Tech Presenta",
-        "description": "Technical presentation competition — showcase your knowledge and communication skills.",
-        "type": "competition"
+        "description": "Technical Presentation Competition — Present innovative ideas through Idea Screening & Final Presentation rounds. Individual: \\u20B999 | Team: \\u20B9169",
+        "image": "/events/wranglex/2.png",
+        "registrationLink": "https://datawranglers-jbiet.in/tech-presenta/",
+        "category": "Tech Competition"
       },
       {
         "name": "BGMI Tournament",
-        "description": "Battlegrounds Mobile India esports tournament with squad-based action.",
-        "type": "gaming"
+        "description": "Battlegrounds Mobile India squad-based esports tournament. Assemble your squad and dominate the battlegrounds!",
+        "image": "/events/wranglex/3.png",
+        "registrationLink": "https://datawranglers-jbiet.in/bgmi/",
+        "category": "Esports"
       },
       {
         "name": "Free Fire Tournament",
-        "description": "Free Fire battle royale esports tournament — last team standing wins.",
-        "type": "gaming"
+        "description": "Free Fire battle royale esports tournament — last team standing wins. Form your team and claim victory!",
+        "image": "/events/wranglex/4.png",
+        "registrationLink": "https://datawranglers-jbiet.in/freefire/",
+        "category": "Esports"
+      },
+      {
+        "name": "Asphalt Racing",
+        "description": "High-speed racing competition — prove your skills on the virtual track and race to the finish line!",
+        "image": "/events/wranglex/5.png",
+        "registrationLink": "https://datawranglers-jbiet.in/asphalt/",
+        "category": "Esports"
+      },
+      {
+        "name": "Stranger Things",
+        "description": "Non-tech mystery competition — solve puzzles, crack codes, and unravel the unknown with your team of 3!",
+        "image": "/events/wranglex/6.png",
+        "registrationLink": "https://datawranglers-jbiet.in/strangerthings/",
+        "category": "Non-Tech"
       },
       {
         "name": "Pottery Workshop",
-        "description": "Hands-on pottery workshop — mold, create, and take home your masterpiece.",
-        "type": "workshop"
+        "description": "Hands-on clay modelling session — design and build unique pottery with guidance from instructors. Team of 3: \\u20B9449 | Team of 4: \\u20B9549",
+        "image": "/events/wranglex/7.png",
+        "registrationLink": "https://datawranglers-jbiet.in/pottery/",
+        "category": "Non-Tech"
+      },
+      {
+        "name": "Event 8",
+        "description": "Coming Soon — Stay tuned for more details about this exciting competition!",
+        "image": "/events/wranglex/8.png",
+        "registrationLink": "https://datawranglers-jbiet.in/wranglex/",
+        "category": "Competition"
+      },
+      {
+        "name": "Event 9",
+        "description": "Coming Soon — Stay tuned for more details about this exciting competition!",
+        "image": "/events/wranglex/9.png",
+        "registrationLink": "https://datawranglers-jbiet.in/wranglex/",
+        "category": "Competition"
+      },
+      {
+        "name": "Event 10",
+        "description": "Coming Soon — Stay tuned for more details about this exciting competition!",
+        "image": "/events/wranglex/10.png",
+        "registrationLink": "https://datawranglers-jbiet.in/wranglex/",
+        "category": "Competition"
       }
     ]
   }
