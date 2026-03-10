@@ -1905,6 +1905,9 @@ export function AdminPanel() {
   // Filter employees
   const filteredEmployees = useMemo(() => {
     return employeesWithStats.filter(emp => {
+      // Exclude admins from the employee grid
+      if (emp.role === 'admin') return false
+
       if (searchQuery) {
         const query = searchQuery.toLowerCase()
         const matches = 
