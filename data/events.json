@@ -398,5 +398,91 @@
       "includesMUN": true,
       "munDescription": "Special Model United Nations experience curated alongside TEDxKPRIT. Build policy, exchange perspectives, and practice consensus-building."
     }
+  },
+  {
+    "id": "wranglex-infoquest-2026",
+    "slug": "wranglex-infoquest-2026",
+    "externalLink": "https://datawranglers-jbiet.in/wranglex/",
+    "title": "WRANGLEX INFOQUEST 2026",
+    "tagline": "Compete. Create. Conquer.",
+    "description": "WRANGLEX INFOQUEST 2026 is a national-level tech fest organized by the Departments of AI&DS and CSE(DS) at J.B. Institute of Engineering & Technology (JBIET). Featuring 5 electrifying events — PromptOff Championship, Tech Presenta, BGMI Tournament, Free Fire Tournament, and Pottery Workshop — this is the ultimate arena for tech enthusiasts, gamers, and creators to showcase their skills and win exciting prizes.",
+    "date": "2026-03-11T09:00:00",
+    "endDate": "2026-03-13T17:00:00",
+    "venue": "JBIET Campus",
+    "location": "J.B. Institute of Engineering & Technology, Hyderabad",
+    "totalCapacity": 500,
+    "ticketsSold": 0,
+    "featured": true,
+    "status": "upcoming",
+    "category": "event",
+    "images": {
+      "banner": "/events/wranglex/banner.png",
+      "thumbnail": "/events/wranglex/banner.png",
+      "gallery": [
+        "/events/wranglex/banner.png"
+      ]
+    },
+    "tickets": [
+      {
+        "id": "wranglex-general",
+        "name": "General Registration",
+        "price": 0,
+        "available": 500,
+        "description": "Register via the official WRANGLEX website for individual event participation",
+        "perks": [
+          "Access to all 5 events",
+          "Certificates for participants",
+          "Exciting prizes for winners"
+        ]
+      }
+    ],
+    "partners": [],
+    "sponsors": [],
+    "agenda": [
+      { "time": "Day 1 - March 11", "title": "PromptOff Championship & Tech Presenta" },
+      { "time": "Day 2 - March 12", "title": "BGMI Tournament & Free Fire Tournament" },
+      { "time": "Day 3 - March 13", "title": "Pottery Workshop & Prize Distribution" }
+    ],
+    "tags": ["Tech Fest", "Gaming", "AI", "PromptOff", "BGMI", "Free Fire", "Workshop", "Competition"],
+    "organizer": "Departments of AI&DS – CSE(DS), JBIET",
+    "contactEmail": "wranglex@jbiet.edu.in",
+    "socialLinks": {
+      "website": "https://datawranglers-jbiet.in/wranglex/"
+    },
+    "highlights": [
+      "PromptOff Championship — AI prompt engineering showdown",
+      "Tech Presenta — Technical presentation competition",
+      "BGMI Tournament — Battlegrounds Mobile India esports",
+      "Free Fire Tournament — Free Fire esports battle",
+      "Pottery Workshop — Hands-on creative experience",
+      "National-level participation with prizes"
+    ],
+    "subEvents": [
+      {
+        "name": "PromptOff Championship",
+        "description": "AI prompt engineering competition — craft the best prompts and compete for the crown.",
+        "type": "competition"
+      },
+      {
+        "name": "Tech Presenta",
+        "description": "Technical presentation competition — showcase your knowledge and communication skills.",
+        "type": "competition"
+      },
+      {
+        "name": "BGMI Tournament",
+        "description": "Battlegrounds Mobile India esports tournament with squad-based action.",
+        "type": "gaming"
+      },
+      {
+        "name": "Free Fire Tournament",
+        "description": "Free Fire battle royale esports tournament — last team standing wins.",
+        "type": "gaming"
+      },
+      {
+        "name": "Pottery Workshop",
+        "description": "Hands-on pottery workshop — mold, create, and take home your masterpiece.",
+        "type": "workshop"
+      }
+    ]
   }
 ]
