@@ -95,14 +95,13 @@ function EmployeeProfileModal({
         .then((history) => {
           setAttendanceHistory(history)
           // Calculate stats from history
-          const present = history.filter(r => r.status === 'P').length
-          const wfh = history.filter(r => r.status === 'W').length
+          const present = history.filter(r => r.status === 'P' || r.status === 'W').length
           const absent = history.filter(r => r.status === 'A').length
           const leave = history.filter(r => r.status === 'L').length
           const onDuty = history.filter(r => r.status === 'O').length
           const unauthLeave = history.filter(r => r.status === 'U').length
           const total = history.length
-          const percentage = total > 0 ? ((present + wfh + onDuty) / total) * 100 : 0
+          const percentage = total > 0 ? ((present + onDuty) / total) * 100 : 0
           
           setStats({
             presentDays: present,
